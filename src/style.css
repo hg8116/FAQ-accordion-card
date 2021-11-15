@@ -44,7 +44,7 @@ h3 {
   padding: 2.875rem 1.5rem;
   background-image: url(/src/images/bg-pattern-mobile.svg);
   background-repeat: no-repeat;
-  background-position: center 0%;
+  background-position: center 3.12rem;
   background-size: 15rem;
 }
 
@@ -53,6 +53,11 @@ h3 {
 }
 
 .card__image {
+  position: relative;
+  display: none;
+}
+
+.card__image__mobile {
   position: relative;
 }
 
@@ -67,6 +72,21 @@ h3 {
   max-width: 15rem;
 }
 
+.card__image__mobile img {
+  position: absolute;
+  top: -6.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 15rem;
+}
+
+h1 {
+  text-align: center;
+}
+
 .card__text {
   padding-top: 7rem;
 }
@@ -74,10 +94,6 @@ h3 {
 .accordion__item {
   padding-top: 1rem;
   border-bottom: 1px solid var(--divider-blue);
-}
-
-.accordion__item h2 {
-  margin-bottom: 0;
 }
 
 .accordion__question {
@@ -92,6 +108,11 @@ h3 {
   font-size: 0.875rem;
   font-family: "Kumbh Sans", sans-serif;
   text-align: left;
+}
+
+.accordion__question:hover {
+  color: var(--text-red);
+  cursor: pointer;
 }
 
 .accordion__question.open {
@@ -128,7 +149,11 @@ h3 {
 .accordion__content {
   font-size: 0.75rem;
   line-height: 1.4;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+.accordion__collapse {
+  transition: height 300ms ease;
 }
 
 .accordion__collapse.collapse {
@@ -136,6 +161,8 @@ h3 {
 }
 
 .accordion__collapse.collapsing {
+  height: 0;
+  overflow: hidden;
 }
 
 .accordion__collapse.open {
@@ -152,6 +179,7 @@ h3 {
     position: relative;
     display: flex;
     margin: 0 auto;
+    margin-top: 3rem;
     padding: 4.375rem 6.25rem 4.375rem 0;
     background-image: url(../src/images/bg-pattern-desktop.svg);
     background-size: 25rem;
@@ -170,6 +198,14 @@ h3 {
   .card__image,
   .card__text {
     flex: 1;
+  }
+
+  h1 {
+    text-align: left;
+  }
+
+  .card__image__mobile {
+    display: none;
   }
 
   .card__image {
